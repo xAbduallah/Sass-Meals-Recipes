@@ -1,7 +1,7 @@
-import Home from './Components/Home/Home'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MealDetails from './Components/MealDetails';
+import Home from './Components/Home'
 import LeftMenu from './Components/LeftMenu';
+import MealDetails from './Components/MealDetails';
 
 function App() {
 
