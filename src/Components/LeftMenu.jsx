@@ -1,5 +1,5 @@
 import React from 'react'
-import mainLogo from '../Assets/logo-BfNap0Pe.png'
+import mainLogo from '../../public/logo-BfNap0Pe.png'
 import { NavLink } from 'react-router-dom'
 
 export default function LeftMenu() {
