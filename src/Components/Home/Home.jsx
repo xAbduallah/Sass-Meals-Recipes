@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import './Home.module.css'
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import LeftMenu from '../LeftMenu';
