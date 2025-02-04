@@ -1,0 +1,1266 @@
+$home-bg-color: #F4F2EE;
+$card-color: white;
+$text-color: #1F1F1F;
+
+body {
+    margin: 0;
+    background-color: $home-bg-color;
+    color: $text-color;
+    box-sizing: border-box;
+}
+
+:global {
+
+    h1,
+    h2,
+    h3 {
+        margin: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .recipeCard {
+        background-color: $card-color;
+        transition: all 0.5s;
+
+        .cardImg {
+            top: -2rem;
+            transition: all 1s;
+
+            &:hover {
+                transform: rotate(360deg);
+            }
+        }
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+
+    .viewRecipe {
+        width: 8rem;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 2rem;
+        font-size: 1.3rem;
+        margin: 0 auto 1rem;
+        background-color: #00ff88;
+        transition: all 0.5s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    .categoryButton {
+        background-color: transparent;
+        color: gray;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 8px 10px;
+        border: 1px gray solid;
+        border-radius: 2rem;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .categoryButton:hover {
+        background-color: white;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .activeCategory {
+        background-color: black;
+        color: white;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .activeCategory:hover {
+        color: white;
+        background-color: black;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+}
+
+
+:global(.leftMenu) {
+    display: block;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 16rem;
+    background-color: $card-color;
+    flex-shrink: 0;
+
+    img {
+        object-fit: contain;
+    }
+}
+
+:global(.mainMenu) {
+    margin: 1rem 1rem 0 18rem;
+    overflow: hidden;
+}
+
+:global(.mealDetails) {
+    margin: 1rem 1rem 0 18rem;
+}
+
+:global(.instructions) {
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+:global(.mealThumb) {
+    width: 25rem;
+    object-fit: cover;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s;
+
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
+:global(.container) {
+    width: 100%;
+}
+
+:global(.h-screen) {
+    height: 100vh;
+}
+
+:global {
+    .absolute {
+        position: absolute;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .relative {
+        position: relative;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .flex-row {
+        flex-direction: row;
+    }
+
+    .flex-col {
+        flex-direction: column;
+    }
+
+    .flex-wrap {
+        flex-wrap: wrap;
+    }
+
+    .flex-nowrap {
+        flex-wrap: nowrap;
+    }
+
+    .flex-wrap-reverse {
+        flex-wrap: wrap-reverse;
+    }
+
+    .items-start {
+        align-items: flex-start;
+    }
+
+    .items-center {
+        align-items: center;
+    }
+
+    .items-end {
+        align-items: flex-end;
+    }
+
+    .items-baseline {
+        align-items: baseline;
+    }
+
+    .items-stretch {
+        align-items: stretch;
+    }
+
+    .justify-start {
+        justify-content: flex-start;
+    }
+
+    .justify-center {
+        justify-content: center;
+    }
+
+    .justify-end {
+        justify-content: flex-end;
+    }
+
+    .justify-between {
+        justify-content: space-between;
+    }
+
+    .justify-around {
+        justify-content: space-around;
+    }
+
+    .justify-evenly {
+        justify-content: space-evenly;
+    }
+
+    .gap-1 {
+        gap: 0.25rem;
+    }
+
+    .gap-2 {
+        gap: 0.5rem;
+    }
+
+    .gap-3 {
+        gap: 0.75rem;
+    }
+
+    .gap-4 {
+        gap: 1rem;
+    }
+
+    .gap-5 {
+        gap: 1.25rem;
+    }
+
+    .gap-6 {
+        gap: 1.5rem;
+    }
+
+    .gap-8 {
+        gap: 2rem;
+    }
+
+    .gap-10 {
+        gap: 2.5rem;
+    }
+
+    .gap-12 {
+        gap: 3rem;
+    }
+}
+
+:global(.leftButton) {
+    width: 75%;
+    background-color: transparent;
+    cursor: pointer;
+    color: $text-color;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 1px solid rgba(128, 128, 128, 0.301);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: start;
+    padding: 10px 20px;
+    transition: all 0.3s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+:global(.activeNav) {
+    background-color: #FD9437;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+:global(.activeNav):hover {
+    background-color: #E5822E;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+$colors: (
+    "red": red,
+    "green": green,
+    "blue": blue,
+    "yellow": yellow,
+    "black": black,
+    "orange": #EE6747,
+    "white": white,
+);
+
+@each $name, $hex in $colors {
+    :global(.bg-#{$name}) {
+        background-color: $hex;
+    }
+}
+
+@each $name, $hex in $colors {
+    :global(.text-#{$name}) {
+        color: $hex;
+    }
+}
+
+:global {
+    .w-full {
+        width: 100%;
+    }
+
+    .h-full {
+        height: 100%;
+    }
+
+    .w-1\/4 {
+        width: 25%;
+    }
+
+    .w-2\/4 {
+        width: 50%;
+    }
+
+    .w-3\/4 {
+        width: 75%;
+    }
+
+    .w-4\/4 {
+        width: 100%;
+    }
+
+    .w-1\/3 {
+        width: 33.33%;
+    }
+
+    .w-2\/3 {
+        width: 66.67%;
+    }
+
+    .w-1\/5 {
+        width: 20%;
+    }
+
+    .w-2\/5 {
+        width: 40%;
+    }
+
+    .w-3\/5 {
+        width: 60%;
+    }
+
+    .w-4\/5 {
+        width: 80%;
+    }
+
+    .w-1\/6 {
+        width: 16.67%;
+    }
+
+    .w-2\/6 {
+        width: 33.33%;
+    }
+
+    .w-1\/7 {
+        width: 14.28%;
+    }
+
+    .w-5\/6 {
+        width: 83.33%;
+    }
+}
+
+@for $i from 1 to 13 {
+    :global(.h-#{$i}-12) {
+        height: calc($i / 12) * 100%;
+    }
+}
+
+:global {
+
+    // **Padding Classes**
+    .p-0 {
+        padding: 0;
+    }
+
+    .p-1 {
+        padding: 0.25rem;
+    }
+
+    // 4px
+    .p-2 {
+        padding: 0.5rem;
+    }
+
+    // 8px
+    .p-3 {
+        padding: 0.75rem;
+    }
+
+    // 12px
+    .p-4 {
+        padding: 1rem;
+    }
+
+    // 16px
+    .p-5 {
+        padding: 1.25rem;
+    }
+
+    // 20px
+    .p-6 {
+        padding: 1.5rem;
+    }
+
+    // 24px
+    .p-8 {
+        padding: 2rem;
+    }
+
+    // 32px
+    .p-10 {
+        padding: 2.5rem;
+    }
+
+    // 40px
+    .p-12 {
+        padding: 3rem;
+    }
+
+    // 48px
+    .p-16 {
+        padding: 4rem;
+    }
+
+    // 64px
+    .p-20 {
+        padding: 5rem;
+    }
+
+    // 80px
+    .p-24 {
+        padding: 6rem;
+    }
+
+    // 96px
+    .p-32 {
+        padding: 8rem;
+    }
+
+    // 128px
+
+    // **Margin Classes**
+    .m-0 {
+        margin: 0;
+    }
+
+    .m-1 {
+        margin: 0.25rem;
+    }
+
+    .m-2 {
+        margin: 0.5rem;
+    }
+
+    .m-3 {
+        margin: 0.75rem;
+    }
+
+    .m-4 {
+        margin: 1rem;
+    }
+
+    .m-5 {
+        margin: 1.25rem;
+    }
+
+    .m-6 {
+        margin: 1.5rem;
+    }
+
+    .m-8 {
+        margin: 2rem;
+    }
+
+    .m-10 {
+        margin: 2.5rem;
+    }
+
+    .m-12 {
+        margin: 3rem;
+    }
+
+    .m-16 {
+        margin: 4rem;
+    }
+
+    .m-20 {
+        margin: 5rem;
+    }
+
+    .m-24 {
+        margin: 6rem;
+    }
+
+    .m-32 {
+        margin: 8rem;
+    }
+
+    // **Padding X (Left & Right)**
+    .px-0 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .px-1 {
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+    }
+
+    .px-2 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .px-6 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .px-8 {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .px-10 {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+
+    // **Padding Y (Top & Bottom)**
+    .py-0 {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .py-1 {
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+    }
+
+    .py-2 {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .py-4 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .py-6 {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .py-8 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .py-10 {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    // **Margin X (Left & Right)**
+    .mx-0 {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .mx-1 {
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+    }
+
+    .mx-2 {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    .mx-4 {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .mx-6 {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+    .mx-8 {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .mx-10 {
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+    }
+
+    // **Margin Y (Top & Bottom)**
+    .my-0 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .my-1 {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .my-2 {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .my-4 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .my-6 {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .my-8 {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .my-10 {
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    // **Negative Margin**
+    .-m-1 {
+        margin: -0.25rem;
+    }
+
+    .-m-2 {
+        margin: -0.5rem;
+    }
+
+    .-m-4 {
+        margin: -1rem;
+    }
+
+    .-m-6 {
+        margin: -1.5rem;
+    }
+
+    .-m-8 {
+        margin: -2rem;
+    }
+
+    .-m-10 {
+        margin: -2.5rem;
+    }
+
+    // **Auto Margin for Centering**
+    .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .my-auto {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}
+
+// Global border-radius variables
+$radius-xs: 0.125rem; // 2px
+$radius-sm: 0.25rem; // 4px
+$radius-md: 0.375rem; // 6px
+$radius-lg: 0.5rem; // 8px
+$radius-xl: 0.75rem; // 12px
+$radius-2xl: 1rem; // 16px
+$radius-3xl: 2.5rem; // 24px
+
+// Global border-radius mixins
+@mixin rounded($radius) {
+    border-radius: $radius;
+}
+
+@mixin rounded-start($radius) {
+    border-start-start-radius: $radius;
+    border-end-start-radius: $radius;
+}
+
+@mixin rounded-end($radius) {
+    border-start-end-radius: $radius;
+    border-end-end-radius: $radius;
+}
+
+@mixin rounded-top($radius) {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+@mixin rounded-right($radius) {
+    border-top-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+
+@mixin rounded-bottom($radius) {
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+
+@mixin rounded-left($radius) {
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+}
+
+@mixin rounded-full() {
+    border-radius: 9999px;
+}
+
+// Global border-radius classes with :global
+:global {
+    .rounded-xs {
+        @include rounded($radius-xs);
+    }
+
+    .rounded-sm {
+        @include rounded($radius-sm);
+    }
+
+    .rounded-md {
+        @include rounded($radius-md);
+    }
+
+    .rounded-lg {
+        @include rounded($radius-lg);
+    }
+
+    .rounded-xl {
+        @include rounded($radius-xl);
+    }
+
+    .rounded-2xl {
+        @include rounded($radius-2xl);
+    }
+
+    .rounded-3xl {
+        @include rounded($radius-3xl);
+    }
+
+    .rounded-none {
+        border-radius: 0;
+    }
+
+    .rounded-full {
+        @include rounded-full();
+    }
+
+    // Global rounded specific sides
+    .rounded-s-xs {
+        @include rounded-start($radius-xs);
+    }
+
+    .rounded-s-sm {
+        @include rounded-start($radius-sm);
+    }
+
+    .rounded-s-md {
+        @include rounded-start($radius-md);
+    }
+
+    .rounded-s-lg {
+        @include rounded-start($radius-lg);
+    }
+
+    .rounded-s-xl {
+        @include rounded-start($radius-xl);
+    }
+
+    .rounded-s-2xl {
+        @include rounded-start($radius-2xl);
+    }
+
+    .rounded-s-3xl {
+        @include rounded-start($radius-3xl);
+    }
+
+    .rounded-s-none {
+        border-start-start-radius: 0;
+        border-end-start-radius: 0;
+    }
+
+    .rounded-s-full {
+        @include rounded-start(9999px);
+    }
+
+    .rounded-e-xs {
+        @include rounded-end($radius-xs);
+    }
+
+    .rounded-e-sm {
+        @include rounded-end($radius-sm);
+    }
+
+    .rounded-e-md {
+        @include rounded-end($radius-md);
+    }
+
+    .rounded-e-lg {
+        @include rounded-end($radius-lg);
+    }
+
+    .rounded-e-xl {
+        @include rounded-end($radius-xl);
+    }
+
+    .rounded-e-2xl {
+        @include rounded-end($radius-2xl);
+    }
+
+    .rounded-e-3xl {
+        @include rounded-end($radius-3xl);
+    }
+
+    .rounded-e-none {
+        border-start-end-radius: 0;
+        border-end-end-radius: 0;
+    }
+
+    .rounded-e-full {
+        @include rounded-end(9999px);
+    }
+
+    .rounded-t-xs {
+        @include rounded-top($radius-xs);
+    }
+
+    .rounded-t-sm {
+        @include rounded-top($radius-sm);
+    }
+
+    .rounded-t-md {
+        @include rounded-top($radius-md);
+    }
+
+    .rounded-t-lg {
+        @include rounded-top($radius-lg);
+    }
+
+    .rounded-t-xl {
+        @include rounded-top($radius-xl);
+    }
+
+    .rounded-t-2xl {
+        @include rounded-top($radius-2xl);
+    }
+
+    .rounded-t-3xl {
+        @include rounded-top($radius-3xl);
+    }
+
+    .rounded-t-none {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .rounded-t-full {
+        @include rounded-top(9999px);
+    }
+
+    .rounded-r-xs {
+        @include rounded-right($radius-xs);
+    }
+
+    .rounded-r-sm {
+        @include rounded-right($radius-sm);
+    }
+
+    .rounded-r-md {
+        @include rounded-right($radius-md);
+    }
+
+    .rounded-r-lg {
+        @include rounded-right($radius-lg);
+    }
+
+    .rounded-r-xl {
+        @include rounded-right($radius-xl);
+    }
+
+    .rounded-r-2xl {
+        @include rounded-right($radius-2xl);
+    }
+
+    .rounded-r-3xl {
+        @include rounded-right($radius-3xl);
+    }
+
+    .rounded-r-none {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .rounded-r-full {
+        @include rounded-right(9999px);
+    }
+
+    .rounded-b-xs {
+        @include rounded-bottom($radius-xs);
+    }
+
+    .rounded-b-sm {
+        @include rounded-bottom($radius-sm);
+    }
+
+    .rounded-b-md {
+        @include rounded-bottom($radius-md);
+    }
+
+    .rounded-b-lg {
+        @include rounded-bottom($radius-lg);
+    }
+
+    .rounded-b-xl {
+        @include rounded-bottom($radius-xl);
+    }
+
+    .rounded-b-2xl {
+        @include rounded-bottom($radius-2xl);
+    }
+
+    .rounded-b-3xl {
+        @include rounded-bottom($radius-3xl);
+    }
+
+    .rounded-b-none {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .rounded-b-full {
+        @include rounded-bottom(9999px);
+    }
+
+    .rounded-l-xs {
+        @include rounded-left($radius-xs);
+    }
+
+    .rounded-l-sm {
+        @include rounded-left($radius-sm);
+    }
+
+    .rounded-l-md {
+        @include rounded-left($radius-md);
+    }
+
+    .rounded-l-lg {
+        @include rounded-left($radius-lg);
+    }
+
+    .rounded-l-xl {
+        @include rounded-left($radius-xl);
+    }
+
+    .rounded-l-2xl {
+        @include rounded-left($radius-2xl);
+    }
+
+    .rounded-l-3xl {
+        @include rounded-left($radius-3xl);
+    }
+
+    .rounded-l-none {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .rounded-l-full {
+        @include rounded-left(9999px);
+    }
+}
+
+// Define breakpoints for responsiveness
+$breakpoints: (
+    sm: 640px,
+    // Small devices
+    md: 768px,
+    // Medium devices
+    lg: 1024px,
+    // Large devices
+    xl: 1280px // Extra large devices
+);
+
+// Define the number of columns
+$grid-columns: 12;
+
+// Define gap sizes
+$gap-sizes: (
+    0,
+    1,
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    16,
+    20,
+    24,
+    32,
+    40,
+    48,
+    56,
+    64
+);
+
+:global {
+
+    // Base grid styles
+    .grid {
+        display: grid;
+        width: 100%;
+    }
+
+    // Generate column utilities (grid-cols-*)
+    @for $i from 1 through $grid-columns {
+        .grid-cols-#{$i} {
+            grid-template-columns: repeat($i, minmax(0, 1fr));
+        }
+    }
+
+    // Generate gap utilities (gap-*)
+    @each $gap in $gap-sizes {
+        .gap-#{$gap} {
+            gap: #{$gap}px;
+        }
+    }
+
+    // Generate responsive classes for different breakpoints
+    @each $breakpoint, $value in $breakpoints {
+        @media (min-width: $value) {
+            @for $i from 1 through $grid-columns {
+                .#{$breakpoint}\:grid-cols-#{$i} {
+                    grid-template-columns: repeat($i, minmax(0, 1fr));
+                }
+            }
+
+            // Responsive gap utilities (gap-*)
+            @each $gap in $gap-sizes {
+                .#{$breakpoint}\:gap-#{$gap} {
+                    gap: #{$gap}px;
+                }
+            }
+        }
+    }
+}
+
+
+
+:global {
+    .text-2xl {
+        font-size: 1.5rem;
+    }
+
+    .font-bold {
+        font-weight: bold;
+    }
+
+    .mb-2 {
+        margin-bottom: 0.5rem;
+    }
+
+    .mb-4 {
+        margin-bottom: 1rem;
+    }
+
+    .md\:mb-0 {
+        @media (min-width: 768px) {
+            margin-bottom: 0;
+        }
+    }
+
+    .md\:ml-6 {
+        @media (min-width: 768px) {
+            margin-left: 1.5rem;
+        }
+    }
+
+    .md\:w-1\/3 {
+        @media (min-width: 768px) {
+            width: 33.33%;
+        }
+    }
+
+    .md\:w-2\/3 {
+        @media (min-width: 768px) {
+            width: 66.67%;
+        }
+    }
+
+    .w-full {
+        width: 100%;
+    }
+
+    .rounded-3xl {
+        @include rounded($radius-3xl);
+    }
+
+    .text-lg {
+        font-size: 1.125rem;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+}
+
+:global {
+    $breakpoints: (
+        sm: 640px,
+        md: 768px,
+        lg: 1024px,
+        xl: 1280px,
+        xxl: 1536px
+    );
+@media (max-width: 768px) {
+    .leftMenu {
+        display: none;
+    }
+
+    .mainMenu {
+        margin-left: 1rem;
+    }
+
+    .mealDetails {
+        margin-left: 1rem;
+    }
+}
+
+$spacing: (
+    0,
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64
+);
+
+.lg\:w-25 {
+    width: 25%;
+}
+
+@each $prefix, $size in $breakpoints {
+    @media (min-width: $size) {
+        @each $space in $spacing {
+            .#{$prefix}\:m-#{$space} {
+                margin: #{$space}rem;
+            }
+
+            .#{$prefix}\:p-#{$space} {
+                padding: #{$space}rem;
+            }
+
+            .#{$prefix}\:mt-#{$space} {
+                margin-top: #{$space}rem;
+            }
+
+            .#{$prefix}\:mb-#{$space} {
+                margin-bottom: #{$space}rem;
+            }
+
+            .#{$prefix}\:ml-#{$space} {
+                margin-left: #{$space}rem;
+            }
+
+            .#{$prefix}\:mr-#{$space} {
+                margin-right: #{$space}rem;
+            }
+
+            .#{$prefix}\:pt-#{$space} {
+                padding-top: #{$space}rem;
+            }
+
+            .#{$prefix}\:pb-#{$space} {
+                padding-bottom: #{$space}rem;
+            }
+
+            .#{$prefix}\:pl-#{$space} {
+                padding-left: #{$space}rem;
+            }
+
+            .#{$prefix}\:pr-#{$space} {
+                padding-right: #{$space}rem;
+            }
+        }
+
+        .#{$prefix}\:flex-row {
+            flex-direction: row;
+        }
+
+        .#{$prefix}\:flex-col {
+            flex-direction: column;
+        }
+
+        @each $i in 1 through 12 {
+            .#{$prefix}\:w-#{$i}\/12 {
+                width: calc((100% / 12) * #{$i});
+            }
+
+            .#{$prefix}\:h-#{$i}\/12 {
+                height: calc((100% / 12) * #{$i});
+            }
+        }
+
+        @each $i in 1 through 4 {
+            .#{$prefix}\:w-#{$i}\/4 {
+                width: calc((100% / 4) * #{$i});
+            }
+
+            .#{$prefix}\:h-#{$i}\/4 {
+                height: calc((100% / 4) * #{$i});
+            }
+        }
+
+        @each $i in 1 through 3 {
+            .#{$prefix}\:w-#{$i}\/3 {
+                width: calc((100% / 3) * #{$i});
+            }
+
+            .#{$prefix}\:h-#{$i}\/3 {
+                height: calc((100% / 3) * #{$i});
+            }
+        }
+
+        @each $i in 1 through 6 {
+            .#{$prefix}\:w-#{$i}\/6 {
+                width: calc((100% / 6) * #{$i});
+            }
+
+            .#{$prefix}\:h-#{$i}\/6 {
+                height: calc((100% / 6) * #{$i});
+            }
+        }
+    }
+}
+}
