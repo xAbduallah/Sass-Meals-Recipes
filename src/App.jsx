@@ -1,4 +1,5 @@
 import Home from './Components/Home/Home'
+import "./Components/Home/Home.module.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MealDetails from './Components/MealDetails';
 import LeftMenu from './Components/LeftMenu';
