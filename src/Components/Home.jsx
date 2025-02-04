@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
-import LeftMenu from '../LeftMenu';
 
 export default function Home() {
     const navigate = useNavigate();

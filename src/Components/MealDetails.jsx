@@ -30,7 +30,8 @@ const MealDetails = () => {
             {meal ? (
                 <div className='flex flex-col items-center justify-center'>
                     <h1 className='mb-2 text-3xl font-bold'>{meal.strMeal}</h1>
-                    <div className='flex flex-col lg:flex-row items-center justify-around w-full mb-4 gap-5'>
+                    
+                    <div className='flex flex-col lg:flex-row items-center justify-around w-full gap-5'>
                         <img src={meal.strMealThumb} alt={meal.strMeal} className='mealThumb rounded-3xl mb-4 lg:mb-0 w-1/2 lg:w-2/4' />
                         <div className='bg-white p-4 rounded-3xl mealThumb text-center shadow-lg'>
                             <h2 className='text-xl font-semibold mb-4'>Ingredients</h2>
@@ -45,6 +46,7 @@ const MealDetails = () => {
                             </div>
                         </div>
                     </div>
+                    
                     <h2 className='text-2xl font-semibold mb-4'>Instructions</h2>
                     <hr className='w-3/4 my-4 h-1 bg-gray-200'></hr>
                     <div className='w-3/4'>
